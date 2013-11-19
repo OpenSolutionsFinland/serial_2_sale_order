@@ -26,11 +26,12 @@ class sales_order_with_lot(osv.osv_memory):
         # Call superclass handler
         print 'action_button_confirm'
         # check that selected lot has correct product
-        so = self.pool.get('sale.order').browse(cr, uid, ids, context)
-        for sol in so.order_line:
-            if sol.prodlot_id:
-                if not sol.product_id.id == osl.prodlot_id.product_id.id:
-                    raise osv.except_osv('Error', 'Production lot and product do not match')
+        sos = self.pool.get('sale.order').browse(cr, uid, ids, context)
+        for so in sos:
+            for sol in so.order_line:
+                if sol.prodlot_id:
+                    if not sol.product_id.id == osl.prodlot_id.product_id.id:
+                        raise osv.except_osv('Error', 'Production lot and product do not match')
         
         res = super(sales_order_with_lot, self).action_button_confirm(cr, uid, ids, context)
         
