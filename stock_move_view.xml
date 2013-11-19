@@ -17,8 +17,12 @@
  					</xpath>
  				</data>
 				-->
-				<field name="prodlot_id" position="after">
-					<field name="desired_prodlot_id" string="Sale lot" />
+				<field name="create_date" position="after">
+					<div>
+						<label for="desired_prodlot_id" string="Sale lot"/>
+						<field name="desired_prodlot_id" />
+					</div>
+					<newline/>
 				</field>
      		</field>
  		</record>
