@@ -30,7 +30,7 @@ class sales_order_with_lot(osv.osv_memory):
         for so in sos:
             for sol in so.order_line:
                 if sol.prodlot_id:
-                    if not sol.product_id.id == osl.prodlot_id.product_id.id:
+                    if not sol.product_id.id == sol.prodlot_id.product_id.id:
                         raise osv.except_osv('Error', 'Production lot and product do not match')
         
         res = super(sales_order_with_lot, self).action_button_confirm(cr, uid, ids, context)
