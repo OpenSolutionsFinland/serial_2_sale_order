@@ -19,8 +19,8 @@ class lot_to_sale_order_line(osv.osv_memory):
 lot_to_sale_order_line()
 
 class sales_order_with_lot(osv.osv_memory):
-    _name='sale.order.line'
-    _inherit='sale.order.line'
+    _name='sale.order'
+    _inherit='sale.order'
     
     def action_button_confirm(self, cr, uid, ids, context=None):
         # Call superclass handler
@@ -38,4 +38,15 @@ class sales_order_with_lot(osv.osv_memory):
         
 
 sales_order_with_lot()
-        
+
+
+# adds desired lot_id to stock.move
+class stock_move_desired_lot(osv.osv_memory):
+    _name='stock.move'
+    _inherit='stock.move'
+    
+    _columns = {
+        'desired_prodlot_id': fields.related('prodlot_id','sale_line_id', type="many2one", relation="stock.move", string="Desired lot", store=False)
+    }
+
+stock_move_desired_lot()

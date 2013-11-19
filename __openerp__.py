@@ -31,7 +31,8 @@
     "init_xml" : [],
     "demo_xml" : [],
     "data" : [
-              'sales_order_view.xml'
+              'sales_order_view.xml',
+              'stock_move_view.xml'
                     ],
     'test': [
              ],
