@@ -47,7 +47,7 @@ class stock_move_desired_lot(osv.osv_memory):
     _inherit='stock.move'
     
     _columns = {
-        'desired_prodlot_id': fields.related('prodlot_id','sale_line_id', type="many2one", relation="stock.move", string="Desired lot", store=False)
+        'desired_prodlot_id': fields.related('sale_line_id', 'prodlot_id', type="many2one", relation="stock.move", string="Desired lot", store=False)
     }
 
 stock_move_desired_lot()
