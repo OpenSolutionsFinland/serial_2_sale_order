@@ -18,7 +18,7 @@
  				</data>
 				-->
 				<field name="sale_line_id" position="after">
-					<field name="desired_prodlot_id" string="Sale lot />
+					<field name="desired_prodlot_id" string="Sale lot" />
 				</field>
      		</field>
  		</record>
