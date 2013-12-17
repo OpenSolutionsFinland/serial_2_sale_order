@@ -1,3 +1,5 @@
+from osv import fields, osv
+
 class stock_picking_serial_from_so(osv.osv):
     _name="stock.picking"
     _inherit="stock.picking"
