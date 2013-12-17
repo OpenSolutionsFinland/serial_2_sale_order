@@ -54,8 +54,8 @@ class stock_move_desired_lot(osv.osv_memory):
             if move.state in ('confirmed', 'waiting'):
                 todo.append(move.id)
             if move.desired_prodlot_id:
-                print 'move ' + str(move.id) + ' has desired lot ' + str(move.desired_prodlot_id)
-                self.write(cr, uid, [move.id], {'prodlot_id': move.desired_prodlot_id})
+                print 'move ' + str(move.id) + ' has desired lot ' + str(move.desired_prodlot_id.id)
+                self.write(cr, uid, [move.id], {'prodlot_id': move.desired_prodlot_id.id})
         res = self.check_assign(cr, uid, todo)
         return res
 
