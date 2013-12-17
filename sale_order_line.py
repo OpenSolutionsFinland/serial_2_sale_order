@@ -1,7 +1,5 @@
 from osv import fields, osv
-#from datetime import datetime as dt
-#from datetime import date
-#from datetime import timedelta
+from openerp import netsvc
 
 class lot_to_sale_order_line(osv.osv_memory):
     _name='sale.order.line'
