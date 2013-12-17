@@ -17,18 +17,5 @@
 				</data>
     		</field>
 		</record>
-		<!-- 
- 	   <record model="ir.ui.view" id="sales_order_line_view_extension">
-     		<field name="name">sale.order.line.form.inherit</field>
-     		<field name="model">sale.order.line</field>
-     		<field name="inherit_id" ref="sale.view_order_line_form2"/>
-     		<field name="arch" type="xml">
-				<field name="price_subtotal" position="after">
-					<field name="delivery_date" string="Delivery" />
-				</field>	
-     		</field>
- 		</record>
-		-->
-
 	</data>
 </openerp>

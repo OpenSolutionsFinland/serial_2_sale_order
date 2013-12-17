@@ -7,22 +7,8 @@
      		<field name="model">stock.move</field>
      		<field name="inherit_id" ref="stock.view_move_form"/>
      		<field name="arch" type="xml">
-				<!-- 
- 				<data>
- 					<xpath expr="//field[@name='order_line']/tree/field[@name='price_subtotal']" position="after">
- 						<field name="prodlot_id" string="Lot" />
- 					</xpath>
- 					<xpath expr="//field[@name='order_line']/form/group/group/field[@name='type']" position="before">
- 						<field name="prodlot_id" string="lot" />
- 					</xpath>
- 				</data>
-				-->
 				<field name="create_date" position="after">
-					<div>
-						<label for="desired_prodlot_id" string="Sale lot"/>
 						<field name="desired_prodlot_id" />
-					</div>
-					<newline/>
 				</field>
      		</field>
  		</record>
