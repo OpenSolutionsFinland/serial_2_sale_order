@@ -4,8 +4,9 @@ from openerp import netsvc
 class lot_to_sale_order_line(osv.osv_memory):
     _name='sale.order.line'
     _inherit='sale.order.line'
-    
+    ''''''
     def _sel_func(self, cr, uid, context=None):
+        print '_sel_func'
         obj = self.pool.get('stock.production.lot')
         sol = self.pool.get('sale.order.line').browse(cr, uid, context['active_id'], context)
         ids = obj.search(cr, uid, [('product_id', '=', sol.product_id)])
@@ -64,6 +65,8 @@ class stock_move_desired_lot(osv.osv_memory):
             if move.desired_prodlot_id:
                 print 'move ' + str(move.id) + ' has desired lot ' + str(move.desired_prodlot_id.id)
                 self.write(cr, uid, [move.id], {'prodlot_id': move.desired_prodlot_id.id})
+                # notify move that prodlot has changed
+                self.onchange_lot_id(move.prodlot_id,move.product_qty, move.location_id, move.product_id, move.product_uom)
         res = self.check_assign(cr, uid, todo)
         return res
 
