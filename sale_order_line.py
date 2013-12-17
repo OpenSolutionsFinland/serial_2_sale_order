@@ -8,8 +8,8 @@ class lot_to_sale_order_line(osv.osv_memory):
     def _sel_func(self, cr, uid, context=None):
         print '_sel_func'
         obj = self.pool.get('stock.production.lot')
-        sol = self.pool.get('sale.order.line').browse(cr, uid, context['active_id'], context)
-        ids = obj.search(cr, uid, [('product_id', '=', sol.product_id)])
+        #sol = self.pool.get('sale.order.line').browse(cr, uid, context['active_id'], context)('product_id', '=', sol.product_id)
+        ids = obj.search(cr, uid, [])
         res = obj.read(cr, uid, ids, ['name', 'id'], context)
         res = [(r['id'], r['name']) for r in res]
         return res
