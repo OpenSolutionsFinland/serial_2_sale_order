@@ -1,7 +1,7 @@
 from osv import fields, osv
 from openerp import netsvc
 
-class lot_to_sale_order_line(osv.osv_memory):
+class lot_to_sale_order_line(osv.osv):
     _name='sale.order.line'
     _inherit='sale.order.line'
     ''''''
@@ -25,7 +25,7 @@ class lot_to_sale_order_line(osv.osv_memory):
 
 lot_to_sale_order_line()
 
-class sales_order_with_lot(osv.osv_memory):
+class sales_order_with_lot(osv.osv):
     _name='sale.order'
     _inherit='sale.order'
         
@@ -49,7 +49,7 @@ sales_order_with_lot()
 
 
 # adds desired lot_id to stock.move
-class stock_move_desired_lot(osv.osv_memory):
+class stock_move_desired_lot(osv.osv):
     _name='stock.move'
     _inherit='stock.move'
    
