@@ -5,9 +5,17 @@ class lot_to_sale_order_line(osv.osv_memory):
     _name='sale.order.line'
     _inherit='sale.order.line'
     
+    def _sel_func(self, cr, uid, context=None):
+        obj = self.pool.get('stock.production.lot')
+        sol = self.pool.get('sale.order.line').browse(cr, uid, context['active_id'], context)
+        ids = obj.search(cr, uid, [('product_id', '=', sol.product_id)])
+        res = obj.read(cr, uid, ids, ['name', 'id'], context)
+        res = [(r['id'], r['name']) for r in res]
+        return res
+        
     _columns = {
         #'dd': fields.function(_get_date, method=True, type='char',store=True, string='Delivery date'),
-        'prodlot_id': fields.many2one('stock.production.lot', 'Lot')
+        'prodlot_id': fields.many2one('stock.production.lot', 'Lot', selection=_sel_func)
     }
     
     _defaults = {
@@ -19,7 +27,7 @@ lot_to_sale_order_line()
 class sales_order_with_lot(osv.osv_memory):
     _name='sale.order'
     _inherit='sale.order'
-    
+        
     def action_button_confirm(self, cr, uid, ids, context=None):
         # Call superclass handler
         print 'action_button_confirm'

@@ -24,6 +24,8 @@
     "version" : "1.0",
     "author" : "Open Solutions Finland",
     "description" : """
+    Adds production lot picking to sales order and production lot is picked in the delivery order
+    when user presses 'Check availability'
     """,
     "website" : "http://www.opensolutions.fi",
     "depends" : ["base","product","sale"],

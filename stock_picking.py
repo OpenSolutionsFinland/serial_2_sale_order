@@ -17,7 +17,7 @@ class stock_picking_serial_from_so(osv.osv):
                 #def onchange_lot_id(self, cr, uid, ids, prodlot_id=False, product_qty=False,loc_id=False, product_id=False, uom_id=False, context=None):
                 #print 'move ' + str(move.id) + " has desired lot " + str(move.desired_prodlot_id)
                 self.pool.get('stock.move').write(cr, uid, [move.id], {'prodlot_id': move.desired_prodlot_id}, context=context)
-    '''
+    
     
 
     
@@ -35,7 +35,7 @@ class stock_picking_serial_from_so(osv.osv):
                 raise osv.except_osv(_('Warning!'),_('Not enough stock, unable to reserve the products.'))
             self.pool.get('stock.move').action_assign(cr, uid, move_ids)
         return True
-            
+    '''
     _columns = {
         
     }
