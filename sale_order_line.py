@@ -18,6 +18,7 @@ class lot_to_sale_order_line(osv.osv):
         print 'product_id_change'
         print 'product ' + str(product)
         res = super(lot_to_sale_order_line, self).product_id_change(cr, uid, ids, pricelist, product, qty=qty, uom=uom, qty_uos=qty_uos, uos=uos, name='', partner_id=partner_id, lang=lang, update_tax=update_tax, date_order=date_order, packaging=packaging, fiscal_position=fiscal_position, flag=flag, context=context)
+        print res
         return res
     
     _columns = {
