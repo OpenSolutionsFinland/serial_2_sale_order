@@ -24,7 +24,7 @@ class lot_to_sale_order_line(osv.osv):
     
     _columns = {
         #'dd': fields.function(_get_date, method=True, type='char',store=True, string='Delivery date'),
-        'prodlot_id': fields.many2one('stock.production.lot', 'Lot', domain="[('prodlot_id.product_id', '=', product_id)]")
+        'prodlot_id': fields.many2one('stock.production.lot', 'Lot', domain="[('product_id', '=', product_id)]")
     }
     
     _defaults = {
