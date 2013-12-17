@@ -12,7 +12,7 @@
 						<field name="prodlot_id" string="Lot" />
 					</xpath>
 					<xpath expr="//field[@name='order_line']/form/group/group/field[@name='type']" position="before">
-						<field name="prodlot_id" string="lot" domain="[('product_id','=','prodlot_id.product_id')]"/>
+						<field name="prodlot_id" string="lot" domain="[('product_id','=',product_id)]"/>
 					</xpath>
 				</data>
     		</field>
