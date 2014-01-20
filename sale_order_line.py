@@ -60,24 +60,7 @@ sales_order_with_lot()
 class stock_move_desired_lot(osv.osv):
     _name='stock.move'
     _inherit='stock.move'
-   '''
-    def action_assign(self, cr, uid, ids, *args):
-        """ Changes state to confirmed or waiting.
-        @return: List of values
-        """
-       
-        todo = []
-        for move in self.browse(cr, uid, ids):
-            if move.state in ('confirmed', 'waiting'):
-                todo.append(move.id)
-            if move.desired_prodlot_id:
-                print 'move ' + str(move.id) + ' has desired lot ' + str(move.desired_prodlot_id.id)
-                self.write(cr, uid, [move.id], {'prodlot_id': move.desired_prodlot_id.id})
-                # notify move that prodlot has changed
-                self.onchange_lot_id(move.prodlot_id,move.product_qty, move.location_id, move.product_id, move.product_uom)
-        res = self.check_assign(cr, uid, todo)
-        return res
-    '''
+    
     _columns = {
         'desired_prodlot_id': fields.related('sale_line_id', 'prodlot_id', type="many2one", relation="stock.production.lot", string="Desired lot", store=False)
     }
