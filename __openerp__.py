@@ -28,13 +28,14 @@
     when user presses 'Check availability'
     """,
     "website" : "http://www.opensolutions.fi",
-    "depends" : ["base","product","sale"],
+    "depends" : ["base","product","sale", "stock"],
     "category" : "Generic Modules",
     "init_xml" : [],
     "demo_xml" : [],
     "data" : [
               'sales_order_view.xml',
-              'stock_move_view.xml'
+              'stock_move_view.xml',
+              'production_lots_view.xml'
                     ],
     'test': [
              ],
