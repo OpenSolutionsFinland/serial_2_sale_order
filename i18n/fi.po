@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 7.0-20131023-232420\n"
+"Project-Id-Version: OpenERP Server 7.0-20131203-002409\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-18 06:30+0000\n"
-"PO-Revision-Date: 2013-12-18 08:37+0200\n"
+"POT-Creation-Date: 2014-01-20 11:34+0000\n"
+"PO-Revision-Date: 2014-01-20 13:35+0200\n"
 "Last-Translator: Jesse Vartiainen <jesse@opensolutions.fi>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,14 +22,24 @@ msgid "lot"
 msgstr "Erä"
 
 #. module: serial_2_sale_order
+#: view:stock.production.lot:0
+msgid "Best before less than 90 days"
+msgstr "Parasta ennen pienempi kuin 90 päivää"
+
+#. module: serial_2_sale_order
 #: model:ir.model,name:serial_2_sale_order.model_stock_move
 msgid "Stock Move"
-msgstr "Varastonsiirto"
+msgstr "Varastosiirto"
 
 #. module: serial_2_sale_order
 #: field:stock.move,desired_prodlot_id:0
 msgid "Desired lot"
 msgstr "Haluttu erä"
+
+#. module: serial_2_sale_order
+#: view:stock.production.lot:0
+msgid "Product Lots Filter"
+msgstr "Tuoteerien suodin"
 
 #. module: serial_2_sale_order
 #: view:sale.order:0 field:sale.order.line,prodlot_id:0
