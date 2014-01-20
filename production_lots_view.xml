@@ -9,7 +9,7 @@
 				<data>
 					<search string="Product Lots Filter" position="inside">
 						<field name="use_date" />
-						<filter icon="terp-go-home" name="lot_bestbefore_filter" string="Best before 90 days" domain="[('use_date','&lt;=', (context_today() + datetime.timedelta(90)).strftime('%%Y-%%m-%%d'))]"/>
+						<filter icon="terp-go-home" name="lot_bestbefore_filter" string="Best before less than 90 days" domain="[('use_date','&gt;=', (context_today() + datetime.timedelta(90)).strftime('%%Y-%%m-%%d'))]"/>
 					</search>
 				</data>
 			</field>
