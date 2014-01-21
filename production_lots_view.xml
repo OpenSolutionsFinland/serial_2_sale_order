@@ -16,7 +16,7 @@
 		</record>
 		
 		<!-- product_search_form_view expanded -->
-		
+		<!--
 		<record id="product_search_form_extended" model="ir.ui.view">
 			<field name="name">product_search_supplier</field>
 			<field name="model">product.product</field>
@@ -29,5 +29,6 @@
 				</data>
 			</field>
 		</record>
+			-->
 	</data>
 </openerp>
