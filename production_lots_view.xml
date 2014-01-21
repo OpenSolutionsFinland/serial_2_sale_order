@@ -24,7 +24,7 @@
 			<field name="arch" type="xml">
 				<data>
 					<group string="Group by..." position="inside">
-						<filter string="Supplier" icon="terp-project" domain="[]" context="{'group_by':'seller_id'}"/>
+						<filter string="Supplier" icon="terp-project" domain="[]" context="{'group_by':'seller_info_id'}"/>
 					</group>
 				</data>
 			</field>
